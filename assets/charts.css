@@ -1,0 +1,65 @@
+/* Distribution controls share the dashboard's existing color and type system. */
+.method .score-formula { font-size: 11px; line-height: 1.8; color: var(--muted); margin: 12px 0 8px; }
+.component-note { color: var(--muted); font-size: 10px; line-height: 1.5; margin: 6px 0 0; }
+.tag { white-space: normal; max-width: 130px; line-height: 1.45; }
+.list-meta { flex-wrap: wrap; }
+.method { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 32px; }
+.method > p { max-width: none; }
+.filters { grid-template-columns: 1.2fr repeat(4, minmax(0, 1fr)); }
+.distributions { padding: 20px 23px; border-top: 1px solid var(--line); }
+.distribution-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; margin-bottom: 17px; }
+.distribution-head h3 { margin: 0 0 6px; font-size: 14px; letter-spacing: -.2px; }
+.distribution-head p { margin: 0; font-size: 10px; color: var(--muted); }
+.distribution-head button { white-space: nowrap; font-size: 10px; padding: 8px 10px; }
+.chart-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.chart-card { min-width: 0; }
+.chart-card h4 { color: var(--muted); font-size: 10px; letter-spacing: .8px; text-transform: uppercase; margin: 0 0 10px; }
+.chart-bars { display: grid; gap: 4px; }
+.chart-columns, .chart-bar { display: grid; grid-template-columns: minmax(0, 1fr) 66px 46px; gap: 6px 8px; }
+.chart-columns { padding: 0 10px 7px; font-size: 9px; color: var(--muted); border-bottom: 1px solid var(--line); margin-bottom: 5px; }
+.chart-columns span:not(:first-child) { text-align: right; }
+.chart-bar { align-items: center; width: 100%; text-align: left; padding: 7px 9px; border: 1px solid transparent; border-radius: 6px; background: transparent; }
+.chart-bar:hover { background: #f0f7f6; }
+.chart-bar.active { background: #edf7f5; border-color: #aad3ca; }
+.chart-bar:disabled { opacity: .5; background: transparent; }
+.chart-bar-label { font-size: 10px; line-height: 1.4; }
+.chart-bar-value { font-size: 11px; font-weight: 650; white-space: nowrap; text-align: right; }
+.chart-bar-share { text-align: right; font-size: 9px; font-weight: 400; color: var(--muted); }
+.chart-track { grid-column: 1 / -1; height: 6px; border-radius: 4px; background: #eaf0f2; overflow: hidden; }
+.chart-track > span { display: block; height: 100%; border-radius: inherit; background: #319b93; }
+.chart-bar.active .chart-track > span { background: #086e73; }
+.chart-help { font-size: 10px; line-height: 1.6; color: var(--muted); margin: 14px 0 0; }
+.filter-label { font-size: 11px; font-weight: 600; color: var(--muted); }
+.score-filter { min-width: 0; }
+#score-picker { position: relative; margin-top: 7px; }
+#score-picker summary { cursor: pointer; list-style: none; padding: 9px 8px; border: 1px solid #cbd8de; border-radius: 6px; font-size: 11px; color: #233e49; display: flex; gap: 8px; justify-content: space-between; align-items: center; min-height: 34px; }
+#score-picker summary::-webkit-details-marker { display: none; }
+#score-picker summary::after { content: '⌄'; flex-shrink: 0; }
+#score-summary { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#score-picker summary:focus-visible { outline: 3px solid #2da4bb; outline-offset: 3px; }
+.score-options { position: absolute; top: calc(100% + 5px); right: 0; min-width: 210px; padding: 12px; background: white; border: 1px solid var(--line); box-shadow: 0 8px 24px #173e481c; border-radius: 8px; z-index: 10; }
+.score-options p { font-size: 10px; color: var(--muted); margin: 0 0 8px; }
+.score-options label { display: flex; align-items: center; gap: 9px; padding: 8px 4px; color: #233e49; font-weight: 400; }
+.score-options input { accent-color: var(--accent); }
+.score-options button { margin-top: 8px; width: 100%; font-size: 11px; }
+.account-picker { position: relative; min-width: 0; }
+.account-input { position: relative; }
+.account-input input { padding-right: 28px; }
+.account-input input::-webkit-search-cancel-button { display: none; }
+#account-toggle { position: absolute; right: 1px; top: 1px; bottom: 1px; border: 0; padding: 0 8px; background: transparent; }
+.account-options { position: absolute; top: calc(100% + 5px); left: 0; min-width: 250px; max-width: 85vw; max-height: 240px; overflow-y: auto; background: white; padding: 5px; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 8px 24px #173e481c; z-index: 11; }
+.account-options button { display: block; width: 100%; border: 0; text-align: left; padding: 9px; font-size: 11px; }
+.account-options button[aria-selected="true"] { background: #edf7f5; }
+.account-options small { display: block; margin-top: 4px; font-size: 10px; color: var(--muted); }
+.account-no-match { font-size: 11px; padding: 9px; color: var(--muted); }
+@media (min-width: 1051px) and (max-width: 1350px) { .filters { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 800px) {
+  .filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .method { grid-template-columns: 1fr; gap: 14px; }
+}
+@media (max-width: 650px) {
+  .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .distributions { padding: 18px 15px; }
+  .chart-grid { grid-template-columns: 1fr; gap: 20px; }
+  .distribution-head { flex-wrap: wrap; }
+}
