@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account Growth | Intelligence Workbench</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/charts.css?v=3.1.2">
+  <script src="data/dashboard-data.js?v=3.1.2" defer></script><script src="assets/app.js?v=3.1.2" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="index.html"><span class="brand-icon">AG</span> Account Growth <span class="brand-sub">/ Intelligence Workbench</span></a><span class="pill">PORTFOLIO DEMO · SYNTHETIC DATA</span></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">SALES & MARKETING ANALYTICS</p><h1>Your next growth opportunities.</h1><p class="subtitle">Prioritize accounts, explore whitespace, and turn evidence into a campaign audience.</p></div><div class="snapshot">ANALYSIS SNAPSHOT<strong id="date">—</strong><span>90-day engagement window</span></div></section>
+    <section class="metrics" aria-label="Portfolio metrics"><article><span>Customer accounts</span><strong id="accounts">—</strong><small>Synthetic customer portfolio</small></article><article><span>Eligible opportunities</span><strong id="eligible">—</strong><small>Product opportunities before filters</small></article><article><span>Ready for review</span><strong id="ready">—</strong><small>Engagement data available</small></article><article><span>Engagement data missing</span><strong id="gaps">—</strong><small>Excluded from campaign export</small></article></section>
+    <section class="workspace"><div class="results">
+      <div class="section-head"><div><p class="eyebrow">CAMPAIGN PLANNING</p><h2>Priority shortlist</h2></div><button id="export" class="primary">Export top 50 opportunities ↓</button></div>
+      <div class="filters"><div id="account-picker" class="account-picker"><label for="search">Search accounts</label><div class="account-input"><input id="search" type="search" role="combobox" aria-autocomplete="list" aria-controls="account-options" aria-expanded="false" autocomplete="off" placeholder="Choose or search an account"><button id="account-toggle" type="button" aria-label="Show matching accounts" tabindex="-1">⌄</button></div><div id="account-options" class="account-options" role="listbox" aria-label="Matching accounts" hidden></div></div><label>Product<select id="product"><option value="">All products</option></select></label><label>Region<select id="region"><option value="">All regions</option></select></label><label>Industry<select id="industry"><option value="">All industries</option></select></label><div class="score-filter"><span class="filter-label">Score ranges</span><details id="score-picker"><summary aria-label="Choose priority score ranges"><span id="score-summary">All scores</span></summary><div class="score-options"><p>Select one or more ranges</p><label><input id="score-0-39" type="checkbox" value="0-39">0–39 points</label><label><input id="score-40-59" type="checkbox" value="40-59">40–59 points</label><label><input id="score-60-79" type="checkbox" value="60-79">60–79 points</label><label><input id="score-80-100" type="checkbox" value="80-100">80–100 points</label><button id="all-scores" type="button">Show all scores</button></div></details></div></div>
+      <section class="distributions" aria-label="Opportunity distributions">
+        <div class="distribution-head"><div><h3>Opportunity distribution</h3><p id="distribution-summary" aria-live="polite"></p></div><button id="reset-filters">Reset filters</button></div>
+        <div class="chart-grid"><div class="chart-card"><h4>By industry</h4><div class="chart-columns"><span>Industry</span><span>Product opportunities</span><span>Share %</span></div><div id="industry-chart" class="chart-bars" role="group" aria-label="Filter opportunities by industry"></div></div><div class="chart-card"><h4>By priority score</h4><div class="chart-columns"><span>Score range</span><span>Product opportunities</span><span>Share %</span></div><div id="score-chart" class="chart-bars" role="group" aria-label="Filter opportunities by score range"></div></div></div>
+        <p class="chart-help">Click an industry to filter. Click score bars to add or remove ranges; no ranges selected means all scores. Each product opportunity is a potential product recommendation for one account; one account can have several. Share is each group's percentage of all matching product opportunities.</p>
+      </section>
+      <div class="list-meta"><p id="count" role="status"></p><label class="check"><input type="checkbox" id="incomplete"> Include missing engagement data</label></div>
+      <div class="table-scroll"><table><thead><tr><th scope="col">Account</th><th scope="col">Whitespace product</th><th scope="col">Priority score</th><th scope="col">Evidence</th></tr></thead><tbody id="rows"></tbody></table></div>
+      <div class="pagination"><button id="previous">← Previous</button><span id="page" aria-live="polite"></span><button id="next">Next →</button></div>
+    </div><aside id="detail" aria-label="Selected account details"></aside></section>
+    <section class="method"><div><p class="eyebrow">TRANSPARENT BY DESIGN</p><h2>Every score has a reason.</h2><p class="score-formula">Fit: up to 30 points · Engagement: up to 30 points<br>Recency: up to 20 points · Complementary ownership: up to 20 points</p><p>Add the four components to get a priority score out of 100. These weights are initial business assumptions.</p></div><p>A higher score means higher priority under these rules, not a higher stated probability of buying. Owned products and open opportunities are excluded. Briefs are factual templates; no live AI model is connected.</p></section>
+    <footer>Built as an interview portfolio project · Fictional accounts and assumptions · No revenue or model-performance claims</footer>
+  </main>
+</body></html>
