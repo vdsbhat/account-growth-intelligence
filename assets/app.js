@@ -170,7 +170,6 @@ function download() {
 }
 
 if (data) {
-  $("date").textContent = new Date(`${data.as_of}T00:00:00`).toLocaleDateString("en-GB", {day:"numeric", month:"short", year:"numeric"});
   $("accounts").textContent = data.account_count.toLocaleString();
   $("eligible").textContent = data.candidates.length.toLocaleString();
   const ready = data.candidates.filter(row => row.evidence_complete).length;
